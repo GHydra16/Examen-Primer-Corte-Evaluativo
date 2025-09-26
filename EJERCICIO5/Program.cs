@@ -97,7 +97,7 @@ namespace calculadora
             Console.WriteLine($"Resultado: {ultimoResultado}");
         }
 
-        private static void RealizarResta()
+        private static void RealizarResta() // se usó para realizar la resta de dos números
         {
             double num1 = LeerNumero("Primer número: ");
             double num2 = LeerNumero("Segundo número: ");
@@ -105,7 +105,7 @@ namespace calculadora
             Console.WriteLine($"Resultado: {ultimoResultado}");
         }
 
-        private static void RealizarMultiplicacion()
+        private static void RealizarMultiplicacion() // se usó para realizar la multiplicación de dos números
         {
             double num1 = LeerNumero("Primer número: ");
             double num2 = LeerNumero("Segundo número: ");
@@ -113,16 +113,16 @@ namespace calculadora
             Console.WriteLine($"Resultado: {ultimoResultado}");
         }
 
-        private static void RealizarDivision()
+        private static void RealizarDivision() // se usó para realizar la división de dos números
         {
             double num1 = LeerNumero("Primer número: ");
-            double num2;
+            double num2; // se declaró sin inicializar para usar en el bucle do-while
             do
             {
                 num2 = LeerNumero("Segundo número (diferente de 0): ");
             } while (num2 == 0);
 
-            ultimoResultado = num1 / num2;
+            ultimoResultado = num1 / num2; // se usó para realizar la división
             Console.WriteLine($"Resultado: {ultimoResultado}");
         }
 
@@ -130,7 +130,7 @@ namespace calculadora
         {
             double baseNum = LeerNumero("Base: ");
             double exponente = LeerNumero("Exponente: ");
-            ultimoResultado = Math.Pow(baseNum, exponente);
+            ultimoResultado = Math.Pow(baseNum, exponente); // Math.Pow se usó para calcular la potencia
             Console.WriteLine($"Resultado: {ultimoResultado}");
         }
 
@@ -142,7 +142,7 @@ namespace calculadora
                 numero = LeerNumero("Número (>=0): ");
             } while (numero < 0);
 
-            ultimoResultado = Math.Sqrt(numero);
+            ultimoResultado = Math.Sqrt(numero); // Math.Sqrt se usó para calcular la raíz cuadrada
             Console.WriteLine($"Resultado: {ultimoResultado}");
         }
     }
