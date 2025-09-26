@@ -1,29 +1,29 @@
 ﻿using System;
 
-namespace calculadora
+namespace calculadora  
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) // Punto de entrada del programa, llama a la función principal de la calculadora
         {
-            Evaluacion5_CalculadoraCientifica.Ejecutar();
+            Evaluacion5_CalculadoraCientifica.Ejecutar(); // Llama al método estático Ejecutar de la clase Evaluacion5_CalculadoraCientifica
         }
     }
 
-    public static class Evaluacion5_CalculadoraCientifica
+    public static class Evaluacion5_CalculadoraCientifica // Clase estática que contiene la lógica de la calculadora científica básica
     {
         // Variable global para guardar el último resultado
-        private static double ultimoResultado = 0;
+        private static double ultimoResultado = 0; // Inicializado en 0 con el primer uso
 
-        public static void Ejecutar()
+        public static void Ejecutar() // Método principal que ejecuta la calculadora
         {
-            bool continuar = true;
+            bool continuar = true; // Controla el bucle principal del programa y permite salir
 
-            while (continuar)
+            while (continuar) // se usó para repetir el menú hasta que el usuario decida salir
             {
                 Console.Clear();
-                Console.WriteLine("=== CALCULADORA CIENTÍFICA BÁSICA ===");
-                Console.WriteLine($"Último resultado: {ultimoResultado}\n");
+                Console.WriteLine("///// CALCULADORA CIENTÍFICA BÁSICA /////");
+                Console.WriteLine($" >>> Último resultado: {ultimoResultado}\n");
 
                 Console.WriteLine("1. Suma");
                 Console.WriteLine("2. Resta");
@@ -34,9 +34,12 @@ namespace calculadora
                 Console.WriteLine("0. Salir");
                 Console.Write("Seleccione una operación: ");
 
-                int opcion = LeerOpcion();
+                int opcion = LeerOpcion(); // Lee la opción del usuario
 
                 switch (opcion)
+                // se usó para ejecutar la operación seleccionada por el usuario
+                // el switch evalúa la variable opcion y ejecuta el bloque de código correspondiente a la opción seleccionada
+                // se usó para manejar las diferentes operaciones de la calculadora
                 {
                     case 1: RealizarSuma(); break;
                     case 2: RealizarResta(); break;
@@ -49,6 +52,9 @@ namespace calculadora
                 }
 
                 if (opcion != 0)
+                // Si no se seleccionó salir, espera a que el usuario presione una tecla para continuar
+                // en ete caso, se usó para pausar la ejecución y permitir al usuario ver el resultado antes de continuar
+                // hasta que el usuario no decida salir, se seguira ejecutando el programa.
                 {
                     Console.WriteLine("\nPresione cualquier tecla para continuar...");
                     Console.ReadKey();
@@ -59,16 +65,20 @@ namespace calculadora
         }
 
         private static int LeerOpcion()
+        //el private se usó para limitar el acceso a este método solo dentro de la clase
+        // se usó para leer y validar la opción ingresada por el usuario
         {
-            int opcion;
-            while (!int.TryParse(Console.ReadLine(), out opcion))
+            int opcion; // lo usamos para almacenar la opción ingresada por el usuario
+            while (!int.TryParse(Console.ReadLine(), out opcion)) // el ! se usó para negar el resultado de TryParse, es decir, el bucle continúa mientras la conversión falle
             {
                 Console.Write("Por favor, ingrese un número válido: ");
             }
-            return opcion;
+            return opcion; 
         }
 
         private static double LeerNumero(string mensaje)
+        // se usó para leer y validar un número ingresado por el usuario
+        // el string mensaje se usó para personalizar el mensaje que se muestra al usuario al pedir un número
         {
             double numero;
             Console.Write(mensaje);
