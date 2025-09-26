@@ -47,8 +47,8 @@ namespace calculadora
                     case 4: RealizarDivision(); break;
                     case 5: RealizarPotencia(); break;
                     case 6: RealizarRaizCuadrada(); break;
-                    case 0: continuar = false; break;
-                    default: Console.WriteLine("Opción no válida."); break;
+                    case 0: continuar = false; break; // se usó para salir del bucle y terminar el programa
+                    default: Console.WriteLine("Opción no válida."); break; // se usó para manejar opciones inválidas
                 }
 
                 if (opcion != 0)
