@@ -73,7 +73,7 @@ namespace calculadora
             {
                 Console.Write("Por favor, ingrese un número válido: ");
             }
-            return opcion; 
+            return opcion; // devuelve la opción válida ingresada por el usuario
         }
 
         private static double LeerNumero(string mensaje)
@@ -86,7 +86,7 @@ namespace calculadora
             {
                 Console.Write("Ingrese un número válido: ");
             }
-            return numero;
+            return numero; // devuelve el número válido ingresado por el usuario
         }
 
         private static void RealizarSuma()
