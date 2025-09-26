@@ -45,27 +45,27 @@ namespace evaluacion // namespace cambiado para evitar conflictos
         private static int LeerOpcion()
         {
             int opcion;
-            while (!int.TryParse(Console.ReadLine(), out opcion))
+            while (!int.TryParse(Console.ReadLine(), out opcion)) // con el tryparse por si el usuario ingresa algo que no es número
             {
                 Console.Write("Por favor, ingrese un número válido: ");
             }
             return opcion;
         }
 
-        private static void AgregarProductoCarrito()
+        private static void AgregarProductoCarrito() 
         {
-            double precio;
+            double precio; // Variable local para el precio del producto
             Console.Write("Precio del producto: $");
-            while (!double.TryParse(Console.ReadLine(), out precio) || precio <= 0)
+            while (!double.TryParse(Console.ReadLine(), out precio) || precio <= 0) // Validación de que sea positivo
             {
-                Console.Write("Ingrese un precio válido: $");
+                Console.Write("Ingrese un precio válido: $"); // en caso de que no lo sea
             }
             
-            carritoTotal += precio;
+            carritoTotal += precio; // aca ya se le suma al total del carrito
             Console.WriteLine($"Producto agregado. Total del carrito: ${carritoTotal:F2}");
         }
 
-        private static void EliminarProductoCarrito()
+        private static void EliminarProductoCarrito() 
         {
             double precio;
             Console.Write("Precio del producto a eliminar: $");
@@ -74,9 +74,9 @@ namespace evaluacion // namespace cambiado para evitar conflictos
                 Console.Write("Ingrese un precio válido: $");
             }
             
-            if (precio <= carritoTotal)
+            if (precio <= carritoTotal) // esta condición es para que no quede negativo el total del carrito
             {
-                carritoTotal -= precio;
+                carritoTotal -= precio; // aca se le resta al total del carrito para eliminar el ultimo producto
                 Console.WriteLine($"Producto eliminado. Total del carrito: ${carritoTotal:F2}");
             }
             else
