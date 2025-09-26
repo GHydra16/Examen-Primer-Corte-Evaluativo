@@ -21,11 +21,14 @@ namespace calculadora
 
             while (continuar) // se usó para repetir el menú hasta que el usuario decida salir
             {
-                Console.Clear();
+                Console.Clear(); // Limpia la consola para una mejor presentación
                 Console.WriteLine("///// CALCULADORA CIENTÍFICA BÁSICA /////");
                 Console.WriteLine($" >>> Último resultado: {ultimoResultado}\n");
 
-                Console.WriteLine("1. Suma");
+                //es este caso se usó cases para mostrar las opciones del menú
+                // se usó para presentar las diferentes operaciones que el usuario puede seleccionar
+                //era un método sencillo y claro para mostrar las opciones disponibles
+                Console.WriteLine("1. Suma"); 
                 Console.WriteLine("2. Resta");
                 Console.WriteLine("3. Multiplicación");
                 Console.WriteLine("4. División");
