@@ -136,11 +136,11 @@ namespace calculadora
 
         private static void RealizarRaizCuadrada()
         {
-            double numero;
+            double numero; // se usó sin inicializar para usar en el bucle do-while
             do
             {
-                numero = LeerNumero("Número (>=0): ");
-            } while (numero < 0);
+                numero = LeerNumero("Número (>=0): "); // se usó para pedir un número no negativo
+            } while (numero < 0); // se usó para repetir la solicitud hasta que el usuario ingrese un número válido
 
             ultimoResultado = Math.Sqrt(numero); // Math.Sqrt se usó para calcular la raíz cuadrada
             Console.WriteLine($"Resultado: {ultimoResultado}");
